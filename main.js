@@ -18,6 +18,7 @@ let person3 = {
     }]
 }
 
+// ! Need to access data within 'shakes'
 
 for(let i = 0; i < Object.keys(person3).length; i++){
     if(Array.isArray(Object.values(person3)[i])){
@@ -77,3 +78,23 @@ console.log(benny.printInfo())
     If the length of the string is less than 10 console log "Small Number"
 */
 
+const greaterThanTen = (str) => {
+    return new Promise((resolve, reject) => {
+        if (str.length >= 10){
+            resolve('Big Word')
+        } else {
+            reject('Small Word')
+        }
+    })
+}
+
+greaterThanTen("THIS IS A BIG WORD")
+
+
+.then((result) => {
+    console.log(result)
+})
+
+.catch((error) => {
+    console.log(error)
+})
