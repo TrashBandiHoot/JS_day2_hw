@@ -18,13 +18,34 @@ let person3 = {
     }]
 }
 
-// ! Need to access data within 'shakes'
+// ! Need to log data within each array on seperate lines
 
-for(let i = 0; i < Object.keys(person3).length; i++){
-    if(Array.isArray(Object.values(person3)[i])){
+for(let i = 0; i < Object.keys(person3).length; i++)
+{
+    if(Array.isArray(Object.values(person3)[i]))
+    {
+        for(let j = 0; j < Object.values(person3)[i].length; j++)
+        {
+            // console.log(typeof Object.values(person3)[i][j])
+            if(Array.isArray(Object.keys(person3)[i][j]))
+            // This if check never evaluates to true
+            {
+                for(let k = 0; k < Object.values(person3)[i][j].length; k++)
+                {
+                // console.log("if check passed")
+                console.log(Object.values(person3)[i][j][k])
+                }
+            }
+            else 
+            {
+                console.log(Object.values(person3)[i][j])
+            }
+        }
+    }
+    else 
+    {
         console.log(Object.values(person3)[i])
-    } else {
-        console.log(Object.values(person3)[i])
+        // console.log("else")
     }
 }
 
